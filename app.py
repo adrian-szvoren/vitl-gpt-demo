@@ -3,6 +3,8 @@ import streamlit as st
 from streamlit_chat import message
 from gpt_index import GPTSimpleVectorIndex, SimpleDirectoryReader
 
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+
 
 @st.cache_resource
 def create_index(file: str) -> GPTSimpleVectorIndex:
